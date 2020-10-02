@@ -4,7 +4,7 @@ import model.*;
 import view.*;
 
 public class MainController {
-    private Warrior w=null;
+    private Warrior w;
     private MainView mainView;
 
     public MainController() {
