@@ -28,7 +28,7 @@ public class StartPanelHandler {
             @Override
             public void componentResized(ComponentEvent e) {
                 super.componentResized(e);
-                label1.setText("<html><body><font size=\"+3\">Willkommen beim fantastischsten,<br>atemberaubensten und spannendsten Spiel.</font></body></html>");
+                label1.setText("<html><body><font size=\"+3\">Willkommen beim fantastischsten,<br>atemberaubendsten und spannendsten Spiel.</font></body></html>");
             }
         });
 
