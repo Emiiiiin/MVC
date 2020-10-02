@@ -27,7 +27,27 @@ public class PanelHandler {
     }
 
     private void createButtons() {
+        ActionListener listener = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
 
+            }
+        };
+        warrior4RadioButton.addActionListener(listener);
+        warrior3RadioButton.addActionListener(listener);
+        archerRadioButton.addActionListener(listener);
+        hunterRadioButton.addActionListener(listener);
+        ActionListener listener1 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+            }
+        };
+        infoButton1.addActionListener(listener1);
+        infoButton2.addActionListener(listener1);
+        infoButton3.addActionListener(listener1);
+        infoButton4.addActionListener(listener1);
+        button1.addActionListener(listener1);
     }
 
     private void updateGUI() {
