@@ -1,5 +1,6 @@
 package model;
-
+//Alle Objekte die kämpfen können ,sowohl der Spieler als auch die Gegner, erben von der Klasse FightingObjekt
+//Die können alle miteineander kämpfen
 public abstract class FightingObject {
     protected String name;
     protected int hp;
