@@ -17,7 +17,7 @@ public class MainProgram {
 
     private static void setup(){
         MainController mainController = new MainController();
-        MainView mainView = new MainView(mainController, "MVC-Textspiel",50,50,1200,900);
+        MainView mainView = new MainView(mainController, "MVC-Textspiel",50,50,800,600);
         mainView.setMainView(mainView);
     }
 

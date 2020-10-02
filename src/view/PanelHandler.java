@@ -7,14 +7,15 @@ import java.awt.event.ActionListener;
 
 public class PanelHandler {
     private JPanel panel;
-    private JRadioButton radioButton1;
-    private JRadioButton radioButton2;
-    private JRadioButton radioButton3;
-    private JRadioButton radioButton4;
+    private JRadioButton warrior4RadioButton;
+    private JRadioButton warrior3RadioButton;
+    private JRadioButton archerRadioButton;
+    private JRadioButton hunterRadioButton;
+    private JButton infoButton1;
+    private JButton infoButton2;
+    private JButton infoButton3;
+    private JButton infoButton4;
     private JButton button1;
-    private JButton button2;
-    private JButton button3;
-    private JButton button4;
     private MainController mainController;
     private MainView mainView;
 
