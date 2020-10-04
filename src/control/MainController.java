@@ -9,6 +9,7 @@ public class MainController {
     private MainView mainView;
     private MainView mainInfoView = null;
     private boolean mainInfoViewIsCreated = false;
+    private int actionCounter = 1;
 
     public MainController() {
 
@@ -55,11 +56,4 @@ public class MainController {
         mainView.switchToPanel(panel);
     }
 
-    //Damit man nur ein Panel für die gesamte Handlung im Spiel braucht, arbeite ich hier an einer Methode, die entscheidet,
-    //was Buttons wann tun sollen. Mit einem Zähler wird überprüft, welche Handlung gerade vorliegt (1,2,3 usw.).
-    //Die Handlung entspricht dann einem Panel, mit unterschiedlichen Texten und Buttons. Das Panel an sich bleibt dann aber gleich.
-
-    public void actionPanelWhatToHandle() {
-
-    }
 }
