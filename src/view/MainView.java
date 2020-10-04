@@ -15,6 +15,7 @@ public class MainView extends JFrame {
     private PanelHandler panelHandler;
     private StartPanelHandler startPanelHandler;
     private InfoHandler infoHandler;
+    private ActionPanelHandler actionPanelHandler;
     private MainView mainView;
     private boolean infoHandlerIsCreated = false;
 
@@ -47,6 +48,7 @@ public class MainView extends JFrame {
     public void createPanels() {
         this.panelHandler = new PanelHandler(mainController, mainView);
         this.startPanelHandler = new StartPanelHandler(mainController, mainView, panelHandler);
+        this.actionPanelHandler = new ActionPanelHandler(mainController);
 
         this.switchToPanel(startPanelHandler.getPanel());
     }
@@ -80,6 +82,9 @@ public class MainView extends JFrame {
         if (panelNumber == 3) {
             createinfoPanel();
             panel = infoHandler.getPanel();
+        }
+        if (panelNumber == 4) {
+            panel = actionPanelHandler.getPanel();
         }
 
         this.getContentPane().removeAll();

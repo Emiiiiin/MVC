@@ -50,4 +50,8 @@ public class MainController {
     public void closeInfoWindow() {
         mainInfoView.setVisible(false);
     }
+
+    public void switchToPanel(int panel) {
+        mainView.switchToPanel(panel);
+    }
 }
