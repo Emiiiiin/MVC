@@ -19,6 +19,7 @@ public class MainProgram {
         MainController mainController = new MainController();
         MainView mainView = new MainView(mainController, "MVC-Textspiel",50,50,800,600);
         mainView.setMainView(mainView);
+        mainController.setMainController(mainController);
     }
 
 }

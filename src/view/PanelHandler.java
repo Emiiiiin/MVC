@@ -73,7 +73,7 @@ public class PanelHandler {
         ActionListener listener1 = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
+                mainController.createInfoWindow();
             }
         };
         infoButton1.addActionListener(listener1);
