@@ -12,6 +12,7 @@ public class InfoHandler {
 
     private MainController mainController;
     private JPanel panel;
+    private JButton closeButton;
 
     public InfoHandler(MainController mainController) {
         this.mainController = mainController;
@@ -21,7 +22,12 @@ public class InfoHandler {
     }
 
     private void createButtons() {
-
+        closeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mainController.closeInfoWindow();
+            }
+        });
     }
 
     private void updateGUI() {

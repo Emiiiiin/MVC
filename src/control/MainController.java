@@ -11,9 +11,7 @@ public class MainController {
     private boolean mainInfoViewIsCreated = false;
 
     public MainController() {
-        MainView mainView = new MainView(mainController, "MVC-Textspiel",50,50,800,600);
-        mainView.setMainView(mainView);
-        this.mainView = mainView;
+
     }
     public void attack(FightingObject enemy){
         enemy.setHp(enemy.getHp()-w.getHp());
@@ -30,8 +28,15 @@ public class MainController {
         //content follows
     }
 
-    public void setMainController(MainController mainContoller){
-        this.mainController = mainContoller;
+    public void setMainController(MainController mainController){
+        this.mainController = mainController;
+        createMainView();
+    }
+
+    public void createMainView() {
+        MainView mainView = new MainView(mainController, "MVC-Textspiel",50,50,800,600);
+        mainView.setMainView(mainView);
+        this.mainView = mainView;
     }
 
     public void createInfoWindow() {
@@ -40,5 +45,9 @@ public class MainController {
             mainInfoViewIsCreated = true;
         }
         mainInfoView.switchToPanel(3);
+    }
+
+    public void closeInfoWindow() {
+        mainInfoView.setVisible(false);
     }
 }
