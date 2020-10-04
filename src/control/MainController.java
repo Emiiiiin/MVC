@@ -11,7 +11,9 @@ public class MainController {
     private boolean mainInfoViewIsCreated = false;
 
     public MainController() {
-        this.mainView=mainView;
+        MainView mainView = new MainView(mainController, "MVC-Textspiel",50,50,800,600);
+        mainView.setMainView(mainView);
+        this.mainView = mainView;
     }
     public void attack(FightingObject enemy){
         enemy.setHp(enemy.getHp()-w.getHp());
