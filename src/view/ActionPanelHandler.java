@@ -11,10 +11,13 @@ import java.awt.event.ComponentEvent;
 public class ActionPanelHandler {
     private JPanel panel;
     private JButton basicAttackButton;
-    private JButton button4;
-    private JButton button1;
-    private JButton button2;
-    private JButton button5;
+    private JButton defenseButton;
+    private JButton arrowStormSPButton;
+    private JButton doubleShotSPButton;
+    private JButton shotOfATrueButton;
+    private JButton dodgeButton;
+    private JButton runButton;
+    private JButton wrathOfTheGodsButton;
     private MainController mainController;
 
         public ActionPanelHandler(MainController mainController) {
