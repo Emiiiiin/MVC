@@ -22,13 +22,20 @@ public class MainController {
 
     public Warrior chosenWarrior(int warrior){
         if(warrior == 1){
-            w = new Hunter("Hunter", 100, 10,15, 30,20,30);
+            w = new Hunter("Hunter", 100, 10,15,true ,20 ,30,20,30);
             }
         //andere Warrior überprüfen
         return w;
     }
     public void run(){
         //content follows
+    }
+
+    public void setEnemy() {
+        int z = (int) (Math.random()* (4-1)+1);
+        if (z == 1) {
+            e = new Mob("Mob",100,5,5,false, 15);
+        }
     }
 
     public void setMainController(MainController mainController){

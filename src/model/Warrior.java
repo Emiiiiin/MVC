@@ -2,8 +2,8 @@ package model;
 
 public abstract class Warrior extends FightingObject{
     protected int specialattack;
-    public Warrior(String name, int hp, int attack, int defense, int SP, int fleePower, int evasion) {
-        super(name, hp, attack, defense);
+    public Warrior(String name, int hp, int attack, int defense, boolean isCriticalHit, int isCriticalHitChance, int SP, int fleePower, int evasion) {
+        super(name, hp, attack, defense,isCriticalHit,isCriticalHitChance);
         this.SP = SP;
         this.fleePower = fleePower;
         this.evasion = evasion;
@@ -14,6 +14,19 @@ public abstract class Warrior extends FightingObject{
     protected int SP;
     protected int fleePower;
     protected int evasion;
+
+    public int getSP() {
+        return SP;
+    }
+
+    public int getFleePower() {
+        return fleePower;
+    }
+
+    public int getEvasion() {
+        return evasion;
+    }
+
     /*
     SP is needed for performing special attacks
     after performing a special attack a specific amount of SP is removed

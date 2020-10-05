@@ -50,4 +50,27 @@ public abstract class FightingObject {
         return defense;
     }
 
+    public boolean isIsdran() {
+        return isdran;
+    }
+
+    public void setIsdran(boolean isdran) {
+        this.isdran = isdran;
+    }
+
+    public boolean isCriticalHit() {
+        return isCriticalHit;
+    }
+
+    public void setCriticalHit(boolean criticalHit) {
+        isCriticalHit = criticalHit;
+    }
+
+    public int getIsCriticalHitChance() {
+        return isCriticalHitChance;
+    }
+
+    public void setIsCriticalHitChance(int isCriticalHitChance) {
+        this.isCriticalHitChance = isCriticalHitChance;
+    }
 }
