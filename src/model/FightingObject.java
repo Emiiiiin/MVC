@@ -7,12 +7,16 @@ public abstract class FightingObject {
     protected int attack;
     protected int defense;
     protected boolean isdran;
+    protected boolean isCriticalHit;
+    protected int isCriticalHitChance;
 
-    public FightingObject(String name, int hp, int attack, int defense) {
+    public FightingObject(String name, int hp, int attack, int defense, boolean isCriticalHit, int isCriticalHitChance) {
         this.name = name;
         this.hp = hp;
         this.attack = attack;
         this.defense = defense;
+        this.isCriticalHit = isCriticalHit;
+        this.isCriticalHitChance = isCriticalHitChance;
     }
 
     public void setName(String name) {
@@ -46,4 +50,27 @@ public abstract class FightingObject {
         return defense;
     }
 
+    public boolean isIsdran() {
+        return isdran;
+    }
+
+    public void setIsdran(boolean isdran) {
+        this.isdran = isdran;
+    }
+
+    public boolean isCriticalHit() {
+        return isCriticalHit;
+    }
+
+    public void setCriticalHit(boolean criticalHit) {
+        isCriticalHit = criticalHit;
+    }
+
+    public int getIsCriticalHitChance() {
+        return isCriticalHitChance;
+    }
+
+    public void setIsCriticalHitChance(int isCriticalHitChance) {
+        this.isCriticalHitChance = isCriticalHitChance;
+    }
 }

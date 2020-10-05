@@ -5,6 +5,7 @@ import view.*;
 
 public class MainController {
     private Warrior w;
+    private enemy e;
     private MainController mainController;
     private MainView mainView;
     private MainView mainInfoView = null;
@@ -13,19 +14,47 @@ public class MainController {
     public MainController() {
 
     }
-    public void attack(FightingObject enemy){
-        enemy.setHp(enemy.getHp()-w.getHp());
+    public void basicAttack(){
+        int damage = w.getAttack();
+        if (isCriticalHit = true){
+            damage = w.getAttack()*2;
+        }
+        damage = damage - e.getDefense();
+        if (damage > 0){
+            e.setHP() = e.get(HP) - damage;
+        }
+    }
+
+    public void doubleShot(){
+        basicAttack();
+        basicAttack();
+        w.getSP() = w.getSP() - 3;
+    }
+
+    public void arrowStorm(){
+        int z = (int) (Math.random()+(5-3)+1);
+        for (int i = 0; i < z; i++) {
+            basicAttack();
+        }
+        w.getSP() = w.getSP() - 15;
     }
 
     public Warrior chosenWarrior(int warrior){
         if(warrior == 1){
-            w = new Hunter("Hunter", 100, 10,15);
+            w = new Hunter("Hunter", 100, 10,15,true ,20 ,30,20,30);
             }
         //andere Warrior überprüfen
         return w;
     }
     public void run(){
         //content follows
+    }
+
+    public void setEnemy() {
+        int z = (int) (Math.random()* (4-1)+1);
+        if (z == 1) {
+            e = new Mob("Mob",100,5,5,false, 15);
+        }
     }
 
     public void setMainController(MainController mainController){
