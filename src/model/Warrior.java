@@ -2,8 +2,11 @@ package model;
 
 public abstract class Warrior extends FightingObject{
     protected int specialattack;
-    public Warrior(String name, int hp, int attack, int defense) {
+    public Warrior(String name, int hp, int attack, int defense, int SP, int fleePower, int evasion) {
         super(name, hp, attack, defense);
+        this.SP = SP;
+        this.fleePower = fleePower;
+        this.evasion = evasion;
     }
     public int getSpecialattack(){
         return specialattack;

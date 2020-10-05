@@ -19,7 +19,7 @@ public class MainController {
 
     public Warrior chosenWarrior(int warrior){
         if(warrior == 1){
-            w = new Hunter("Hunter", 100, 10,15);
+            w = new Hunter("Hunter", 100, 10,15, 30,20,30);
             }
         //andere Warrior überprüfen
         return w;
