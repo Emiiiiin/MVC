@@ -24,7 +24,7 @@ public class MainController {
             e.setHP() = e.get(HP) - damage;
         }
     }
-
+    //hunter moveset
     public void doubleShot(){
         basicAttack();
         basicAttack();
@@ -39,11 +39,62 @@ public class MainController {
         w.getSP() = w.getSP() - 15;
     }
 
+    public void sniperShot(){
+        int damage = w.getAttack();
+        if (isCriticalHit = true){
+            damage = w.getAttack()*4;
+        }
+        else(){
+            basicAttack();
+        }
+        w.getSP() = w.getSP() - 8;
+    }
+
+    //guard moveset
+    public void mightySpearStab(){
+        int damage = w.getAttack() + 20;
+        if (isCriticalHit = true){
+            damage = w.getAttack()*2;
+        }
+        damage = damage - e.getDefense();
+        if (damage > 0){
+            e.setHP() = e.get(HP) - damage;
+        }
+        w.getSP() = w.getSP() - 4;
+    }
+    public void bouquetOfSpears(){
+        int z = (int) (Math.random()+(20-5)+1);
+        for (int i = 0; i < z; i++) {
+            int damage = w.getAttack() / 2;
+            if (isCriticalHit = true){
+                damage = w.getAttack()*2;
+            }
+            damage = damage - e.getDefense();
+            if (damage > 0){
+                e.setHP() = e.get(HP) - damage;
+            }
+        }
+        w.getSP() = w.getSP() - 20;
+    }
+
+    public void shieldDash(){
+        int damage = w.getDefense();
+        if (isCriticalHit = true){
+            damage = w.getDefense()*2;
+        }
+        damage = damage - e.getDefense();
+        if (damage > 0){
+            e.setHP() = e.get(HP) - damage;
+    }
+
     public Warrior chosenWarrior(int warrior){
         if(warrior == 1){
-            w = new Hunter("Hunter", 100, 10,15,true ,20 ,30,20,30);
+            w = new Hunter("Hunter", 100, 10,5,true ,20 ,30,20,30);
             }
         //andere Warrior überprüfen
+        if (warrior == 2){
+            w = new Guard("Guard", 150, 8,12,true ,5 ,23,4,14);
+        }
         return w;
     }
     public void run(){
