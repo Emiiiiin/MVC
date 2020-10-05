@@ -14,7 +14,10 @@ public class MainController {
 
     }
     public void attack(FightingObject enemy){
-        enemy.setHp(enemy.getHp()-w.getHp());
+        int damage;
+        if (criticalHit = true){
+            damage = w.getAttack()*2;
+        }
     }
 
     public Warrior chosenWarrior(int warrior){

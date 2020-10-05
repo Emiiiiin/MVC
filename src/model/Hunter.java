@@ -5,13 +5,14 @@ public class Hunter extends Warrior{
         super(name, hp, attack, defense,SP,fleePower,evasion);
     }
     /*
-    damage = attack + weaponPower;
-    if (criticalHit = true){
-    damage = damage*2;
-    }
-    damage = damage - enemiesDefense;
     if (){
     enemiesHP = enmiesHP -damage;
+    }
+
+    public void attack() {
+        attackdamage = attack;
+
+        damage = damage - enemiesDefense;
     }
      */
 
