@@ -30,7 +30,6 @@ public class Hunter extends Warrior{
      */
 
 
-    }
     /*
     if (){
     enemiesHP = enmiesHP -damage;

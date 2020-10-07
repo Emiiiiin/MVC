@@ -12,7 +12,7 @@ public class MainController {
     private boolean mainInfoViewIsCreated = false;
 
     public MainController() {
-
+        setEnemy();
     }
     public void basicAttack(){
         int damage = w.getAttack();
@@ -108,7 +108,7 @@ public class MainController {
             e = new Mob("Mob",100,5,5,false, 15);
         }
         if (z == 2) {
-            e = new Mob("Mob",100,5,5,false, 15);
+            e = new Mob("Wob",100,5,5,false, 15);
         }
     }
 
@@ -145,4 +145,13 @@ public class MainController {
         mainView.switchToPanel(panel);
     }
 
+    public String[] getWAndENameHPSP() {
+        String[] output = new String[5];
+        output[0] = String.valueOf(w.getHp());
+        output[1] = String.valueOf(w.getSP());
+        output[2] = w.getName();
+        output[3] = String.valueOf(e.getHp());
+        output[4] = e.getName();
+        return output;
+    }
 }

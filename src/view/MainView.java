@@ -85,6 +85,8 @@ public class MainView extends JFrame {
         }
         if (panelNumber == 4) {
             panel = actionPanelHandler.getPanel();
+            actionPanelHandler.createButtons();
+            actionPanelHandler.updateGUI();
         }
 
         this.getContentPane().removeAll();
