@@ -38,6 +38,7 @@ public abstract class FightingObject {
     public int getHp(){
         return hp;
     }
+
     public String getName() {
         return name;
     }
@@ -73,4 +74,5 @@ public abstract class FightingObject {
     public void setIsCriticalHitChance(int isCriticalHitChance) {
         this.isCriticalHitChance = isCriticalHitChance;
     }
+
 }

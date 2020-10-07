@@ -16,19 +16,19 @@ public class MainController {
     }
     public void basicAttack(){
         int damage = w.getAttack();
-        if (isCriticalHit = true){
+        if (w.isCriticalHit() == true){
             damage = w.getAttack()*2;
         }
         damage = damage - e.getDefense();
         if (damage > 0){
-            e.setHP() = e.get(HP) - damage;
+            e.setHp(e.getHp() - damage);
         }
     }
     //hunter moveset
     public void doubleShot(){
         basicAttack();
         basicAttack();
-        w.getSP() = w.getSP() - 3;
+        w.setSP(w.getSP() - 3);
     }
 
     public void arrowStorm(){
@@ -36,55 +36,56 @@ public class MainController {
         for (int i = 0; i < z; i++) {
             basicAttack();
         }
-        w.getSP() = w.getSP() - 15;
+        w.setSP(w.getSP() - 15);
     }
 
     public void sniperShot(){
         int damage = w.getAttack();
-        if (isCriticalHit = true){
+        if (w.isCriticalHit() == true){
             damage = w.getAttack()*4;
         }
-        else(){
+        else {
             basicAttack();
         }
-        w.getSP() = w.getSP() - 8;
+        w.setSP(w.getSP() - 8);
     }
 
     //guard moveset
     public void mightySpearStab(){
         int damage = w.getAttack() + 20;
-        if (isCriticalHit = true){
+        if (w.isCriticalHit() == true){
             damage = w.getAttack()*2;
         }
         damage = damage - e.getDefense();
         if (damage > 0){
-            e.setHP() = e.get(HP) - damage;
+            e.setHp(e.getHp() - damage);
         }
-        w.getSP() = w.getSP() - 4;
+        w.setSP(w.getSP() - 4);
     }
     public void bouquetOfSpears(){
         int z = (int) (Math.random()+(20-5)+1);
         for (int i = 0; i < z; i++) {
             int damage = w.getAttack() / 2;
-            if (isCriticalHit = true){
+            if (w.isCriticalHit() == true){
                 damage = w.getAttack()*2;
             }
             damage = damage - e.getDefense();
             if (damage > 0){
-                e.setHP() = e.get(HP) - damage;
+                e.setHp(e.getHp() - damage);
             }
         }
-        w.getSP() = w.getSP() - 20;
+        w.setSP(w.getSP() - 20);
     }
 
-    public void shieldDash(){
+    public void shieldDash() {
         int damage = w.getDefense();
-        if (isCriticalHit = true){
-            damage = w.getDefense()*2;
+        if (w.isCriticalHit() == true) {
+            damage = w.getDefense() * 2;
         }
         damage = damage - e.getDefense();
-        if (damage > 0){
-            e.setHP() = e.get(HP) - damage;
+        if (damage > 0) {
+            e.setHp(e.getHp() - damage);
+        }
     }
 
     public Warrior chosenWarrior(int warrior){
@@ -102,8 +103,11 @@ public class MainController {
     }
 
     public void setEnemy() {
-        int z = (int) (Math.random()* (4-1)+1);
+        int z = (int) (Math.random()* (2-1)+1);
         if (z == 1) {
+            e = new Mob("Mob",100,5,5,false, 15);
+        }
+        if (z == 2) {
             e = new Mob("Mob",100,5,5,false, 15);
         }
     }

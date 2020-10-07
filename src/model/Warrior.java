@@ -27,6 +27,10 @@ public abstract class Warrior extends FightingObject{
         return evasion;
     }
 
+    public void setSP(int SP) {
+        this.SP = SP;
+    }
+
     /*
     SP is needed for performing special attacks
     after performing a special attack a specific amount of SP is removed
