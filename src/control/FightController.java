@@ -163,7 +163,7 @@ public class FightController {
         }
     }
 
-    public Warrior chosenWarrior(int warrior) {
+    public void chosenWarrior(int warrior) {
         //Mit dem übergegebenen Parameter wird je nach Zahlenwert ein Warrior-Objekt erstellt.
         if (warrior == 1) {
             w = new Hunter("Hunter", 1000, 10, 5, false, 20, 30, 20, 30);
@@ -171,7 +171,11 @@ public class FightController {
         if (warrior == 2) {
             w = new Guard("Guard", 1500, 8, 12, false, 5, 23, 4, 14);
         }
-        return w;
+    }
+
+    //Setzt das Objekt Warrior auf null, damit es gelöscht wird. (Info-Fenster)
+    public void deleteWarrior() {
+        w = null;
     }
 
     public void setEnemy() {
@@ -189,15 +193,20 @@ public class FightController {
         //content follows
     }
 
-    public String[] getWAndENameHPSP() {
-        //Die Name/Hp/SP-Werte des Warrior- und Enemy-Objektes werden in einem Array abgespeichert
+    public String[] getAllImportantData() {
+        //Alle wichtigen Werte des Warrior- und Enemy-Objektes werden in einem Array abgespeichert
         //und dieser zurückgegeben.
-        String[] output = new String[5];
+        String[] output = new String[10];
         output[0] = String.valueOf(w.getHp());
         output[1] = String.valueOf(w.getSP());
         output[2] = w.getName();
         output[3] = String.valueOf(e.getHp());
         output[4] = e.getName();
+        output[5] = String.valueOf(w.getAttack());
+        output[6] = String.valueOf(w.getDefense());
+        output[7] = String.valueOf(w.getIsCriticalHitChance());
+        output[8] = String.valueOf(w.getFleePower());
+        output[9] = String.valueOf(w.getEvasion());
         return output;
     }
 }

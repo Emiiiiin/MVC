@@ -24,7 +24,7 @@ public class PanelHandler {
         this.mainController = mainController;
         this.mainView = mainView;
         createButtons();
-        updateGUI();
+        setGUIData();
     }
 
     private void createButtons() {
@@ -71,20 +71,25 @@ public class PanelHandler {
                 mainController.switchToPanel(4);
             }
         });
-        ActionListener listener1 = new ActionListener() {
+        infoButton1.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                mainController.createInfoWindow();
+            public void actionPerformed(ActionEvent e) {
+                mainController.createInfoWindow(1);
             }
-        };
-        infoButton1.addActionListener(listener1);
-        infoButton2.addActionListener(listener1);
-        infoButton3.addActionListener(listener1);
-        infoButton4.addActionListener(listener1);
+        });
+        infoButton2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mainController.createInfoWindow(2);
+            }
+        });
     }
 
-    private void updateGUI() {
-
+    private void setGUIData() {
+        infoButton3.setVisible(false);
+        infoButton4.setVisible(false);
+        warrior3RadioButton.setVisible(false);
+        warrior4RadioButton.setVisible(false);
     }
 
     public JPanel getPanel(){

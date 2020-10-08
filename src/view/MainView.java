@@ -82,6 +82,7 @@ public class MainView extends JFrame {
         if (panelNumber == 3) {
             createinfoPanel();
             panel = infoHandler.getPanel();
+            infoHandler.setGUIData();
         }
         if (panelNumber == 4) {
             panel = actionPanelHandler.getPanel();

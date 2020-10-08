@@ -1,6 +1,5 @@
 package control;
 
-import model.*;
 import view.*;
 
 public class MainController {
@@ -29,19 +28,23 @@ public class MainController {
         this.mainView = mainView;
     }
 
-    public void createInfoWindow() {
-        //Das Info-Fenster wird erstellt, falls es nicht schon erstellt wurde. Das panel des infoHandlers wird eingesetzt und das Fenster wird sichtbar.
+    public void createInfoWindow(int w) {
+        //Das Info-Fenster wird erstellt, falls es nicht schon erstellt wurde. Der Parameter w wird an die Methode sendChosenWarrior() geleitet.
+        // (Damit wir von einem Warrior Informationen abrufen können.)
+        //Das panel des infoHandlers wird eingesetzt und das Fenster wird sichtbar.
         if (mainInfoViewIsCreated == false) {
         mainInfoView = new MainView(mainController, "Information",50,50,400,200);
             mainInfoViewIsCreated = true;
         }
+        sendChosenWarrior(w);
         mainInfoView.switchToPanel(3);
         mainInfoView.setVisible(true);
     }
 
     public void closeInfoWindow() {
-        //Macht das Info-Fenster unsichtbar.
+        //Macht das Info-Fenster unsichtbar. Die Methode deleteWarrior() im fightController wird ausgeführt.
         mainInfoView.setVisible(false);
+        fightController.deleteWarrior();
     }
 
     public void switchToPanel(int panel) {
@@ -58,8 +61,8 @@ public class MainController {
         fightController.attack(w, attack);
     }
 
-    public String[] getWAndENameHPSP() {
-        return fightController.getWAndENameHPSP();
+    public String[] getAllImportantData() {
+        return fightController.getAllImportantData();
     }
 
 }

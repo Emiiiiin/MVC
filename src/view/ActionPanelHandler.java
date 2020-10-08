@@ -94,14 +94,14 @@ public class ActionPanelHandler {
         }
 
         protected void updatePlayerGUI() {
-            nameLabelPlayer.setText(mainController.getWAndENameHPSP()[2]);
-            hpLabelPlayer.setText("HP: " + mainController.getWAndENameHPSP()[0]);
-            spLabelPlayer.setText("SP: " + mainController.getWAndENameHPSP()[1]);
+            nameLabelPlayer.setText(mainController.getAllImportantData()[2]);
+            hpLabelPlayer.setText("HP: " + mainController.getAllImportantData()[0]);
+            spLabelPlayer.setText("SP: " + mainController.getAllImportantData()[1]);
         }
 
         protected void updateEnemyGUI() {
-            nameLabelEnemy.setText(mainController.getWAndENameHPSP()[4]);
-            hpLabelEnemy.setText("HP: " + mainController.getWAndENameHPSP()[3]);
+            nameLabelEnemy.setText(mainController.getAllImportantData()[4]);
+            hpLabelEnemy.setText("HP: " + mainController.getAllImportantData()[3]);
             lightPanel.setBackground(Color.green);
         }
 
