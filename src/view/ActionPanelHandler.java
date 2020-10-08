@@ -30,28 +30,28 @@ public class ActionPanelHandler {
             basicAttackButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    mainController.basicAttack();
+                    mainController.sendAttack(0);
                     updateGUI();
                 }
             });
             doubleShotSPButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    mainController.doubleShot();
+                    mainController.sendAttack(1);
                     updateGUI();
                 }
             });
             shotOfATrueButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    mainController.sniperShot();
+                    mainController.sendAttack(2);
                     updateGUI();
                 }
             });
             arrowStormSPButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    mainController.arrowStorm();
+                    mainController.sendAttack(3);
                     updateGUI();
                 }
             });

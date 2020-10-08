@@ -67,7 +67,7 @@ public class PanelHandler {
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                mainController.chosenWarrior(warrior);
+                mainController.sendChosenWarrior(warrior);
                 mainController.switchToPanel(4);
             }
         });
