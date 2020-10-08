@@ -3,6 +3,7 @@ package view;
 import control.MainController;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
@@ -23,38 +24,12 @@ public class ActionPanelHandler {
     private JLabel hpLabelEnemy;
     private JLabel nameLabelEnemy;
     private JLabel nameLabelPlayer;
+    private JPanel lightPanel;
+    private Timer timer;
     private MainController mainController;
 
         public ActionPanelHandler(MainController mainController) {
             this.mainController = mainController;
-            basicAttackButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    mainController.sendAttack(0);
-                    updateGUI();
-                }
-            });
-            doubleShotSPButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    mainController.sendAttack(1);
-                    updateGUI();
-                }
-            });
-            shotOfATrueButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    mainController.sendAttack(2);
-                    updateGUI();
-                }
-            });
-            arrowStormSPButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    mainController.sendAttack(3);
-                    updateGUI();
-                }
-            });
         }
 
         protected void createButtons() {
@@ -69,14 +44,65 @@ public class ActionPanelHandler {
             nameLabelEnemy.addComponentListener(listener);
             hpLabelPlayer.addComponentListener(listener);
             nameLabelPlayer.addComponentListener(listener);
+            defenseButton.setVisible(false);
+            dodgeButton.setVisible(false);
+            runButton.setVisible(false);
+            wrathOfTheGodsButton.setVisible(false);
+            basicAttackButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    lightPanel.setBackground(Color.red);
+                    mainController.sendAttack(0);
+                    updatePlayerGUI();
+                    updateEnemyGUI();
+                }
+            });
+            doubleShotSPButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    lightPanel.setBackground(Color.red);
+                    mainController.sendAttack(1);
+                    updatePlayerGUI();
+                    updateEnemyGUI();
+                }
+            });
+            shotOfATrueButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    lightPanel.setBackground(Color.red);
+                    mainController.sendAttack(2);
+                    updatePlayerGUI();
+                    updateEnemyGUI();
+                }
+            });
+            arrowStormSPButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    lightPanel.setBackground(Color.red);
+                    mainController.sendAttack(3);
+                    updatePlayerGUI();
+                    updateEnemyGUI();
+                }
+            });
+            lightPanel.addComponentListener(new ComponentAdapter() {
+                @Override
+                public void componentResized(ComponentEvent e) {
+                    super.componentResized(e);
+                    lightPanel.setBackground(Color.green);
+                }
+            });
         }
 
-        protected void updateGUI() {
+        protected void updatePlayerGUI() {
             nameLabelPlayer.setText(mainController.getWAndENameHPSP()[2]);
             hpLabelPlayer.setText("HP: " + mainController.getWAndENameHPSP()[0]);
             spLabelPlayer.setText("SP: " + mainController.getWAndENameHPSP()[1]);
+        }
+
+        protected void updateEnemyGUI() {
             nameLabelEnemy.setText(mainController.getWAndENameHPSP()[4]);
             hpLabelEnemy.setText("HP: " + mainController.getWAndENameHPSP()[3]);
+            lightPanel.setBackground(Color.green);
         }
 
         public JPanel getPanel() {

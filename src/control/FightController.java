@@ -38,7 +38,7 @@ public class FightController {
                 shieldDash();
             }
         }
-
+        enemyAttack();
     }
 
     public void basicAttack() {
@@ -131,13 +131,45 @@ public class FightController {
         }
     }
 
+    //enemy moveset
+
+    private void enemyAttack() {
+        int z = (int) (Math.random()* (3-0)+1);
+        if (z == 0) {
+            basicEnemyAttack();
+        }
+        if (z == 1) {
+            basicEnemyAttack();
+        }
+        if (z == 2) {
+            basicEnemyAttack();
+        }
+        if (z == 3) {
+            basicEnemyAttack();
+        }
+    }
+
+    public void basicEnemyAttack() {
+        //Der Standard-Enemy-Angriff. Das Attribut damage wird mit dem attack-Wert des Enemys gleichgesetzt. Wenn isCriticalHit true ist,
+        //wird damage verdoppelt. Danach wird der defense-Wert des Warriors von damage abgezogen.
+        //Wenn die Hp-Werte des Warriors größer als 0 sind, wird damage von den Hp-Werten des Warriors abgezogen.
+        int damage = e.getAttack();
+        if (e.isCriticalHit() == true) {
+            damage = damage * 2;
+        }
+        damage = damage - w.getDefense();
+        if (w.getHp() > 0) {
+            w.setHp(w.getHp() - damage);
+        }
+    }
+
     public Warrior chosenWarrior(int warrior) {
         //Mit dem übergegebenen Parameter wird je nach Zahlenwert ein Warrior-Objekt erstellt.
         if (warrior == 1) {
-            w = new Hunter("Hunter", 100, 10, 5, true, 20, 30, 20, 30);
+            w = new Hunter("Hunter", 1000, 10, 5, false, 20, 30, 20, 30);
         }
         if (warrior == 2) {
-            w = new Guard("Guard", 150, 8, 12, true, 5, 23, 4, 14);
+            w = new Guard("Guard", 1500, 8, 12, false, 5, 23, 4, 14);
         }
         return w;
     }
@@ -146,10 +178,10 @@ public class FightController {
         //Erzeugt mithilfe der Zuffalszahl z (1 oder 2) je nach Zahlenwert ein Enemy-Objekt.
         int z = (int) (Math.random()* (2-1)+1);
         if (z == 1) {
-            e = new Mob("Mob",100,5,5,false, 15);
+            e = new Mob("Mob",1000,10,5,false, 15);
         }
         if (z == 2) {
-            e = new Mob("Wob",180,5,5,false, 15);
+            e = new Mob("Wob",1800,15,5,false, 15);
         }
     }
 
