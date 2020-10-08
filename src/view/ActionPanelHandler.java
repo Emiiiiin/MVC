@@ -3,6 +3,8 @@ package view;
 import control.MainController;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 
@@ -25,6 +27,34 @@ public class ActionPanelHandler {
 
         public ActionPanelHandler(MainController mainController) {
             this.mainController = mainController;
+            basicAttackButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    mainController.basicAttack();
+                    updateGUI();
+                }
+            });
+            doubleShotSPButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    mainController.doubleShot();
+                    updateGUI();
+                }
+            });
+            shotOfATrueButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    mainController.sniperShot();
+                    updateGUI();
+                }
+            });
+            arrowStormSPButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    mainController.arrowStorm();
+                    updateGUI();
+                }
+            });
         }
 
         protected void createButtons() {
