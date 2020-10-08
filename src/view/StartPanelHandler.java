@@ -20,6 +20,9 @@ public class StartPanelHandler {
 
         createButtons();
         updateGUI();
+    }
+
+    private void createButtons() {
         label1.addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent e) {
@@ -27,10 +30,6 @@ public class StartPanelHandler {
                 label1.setText("<html><body><font size=\"+3\">Willkommen beim fantastischsten,<br>atemberaubendsten und spannendsten Spiel.</font></body></html>");
             }
         });
-
-    }
-
-    private void createButtons() {
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

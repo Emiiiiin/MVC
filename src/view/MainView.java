@@ -16,6 +16,7 @@ public class MainView extends JFrame {
     private StartPanelHandler startPanelHandler;
     private InfoHandler infoHandler;
     private ActionPanelHandler actionPanelHandler;
+    private EndPanelHandler endPanelHandler;
     private MainView mainView;
     private boolean infoHandlerIsCreated = false;
 
@@ -49,6 +50,7 @@ public class MainView extends JFrame {
         this.panelHandler = new PanelHandler(mainController);
         this.startPanelHandler = new StartPanelHandler(mainController);
         this.actionPanelHandler = new ActionPanelHandler(mainController);
+        this.endPanelHandler = new EndPanelHandler(mainController);
 
         this.switchToPanel(startPanelHandler.getPanel());
     }
@@ -89,6 +91,9 @@ public class MainView extends JFrame {
             actionPanelHandler.createButtons();
             actionPanelHandler.updatePlayerGUI();
             actionPanelHandler.updateEnemyGUI();
+        }
+        if (panelNumber == 5) {
+            panel = endPanelHandler.getPanel();
         }
 
         this.getContentPane().removeAll();
