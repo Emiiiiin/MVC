@@ -6,3 +6,4 @@ public abstract class enemy extends FightingObject{
         super(name, hp, attack, defense, isCriticalHit, isCriticalHitChance);
     }
 }
+//reminder: make boolean type for when the monster is dead

@@ -5,6 +5,8 @@ public class Hunter extends Warrior{
         super(name, hp, attack, defense,isCriticalHit,isCriticalHitChance,SP,fleePower,evasion);
     }
     /*
+    "your name is chase. you are a hunter, currently living in the davelion woods. you are a skilled archer wich comes in handy because you are horrible at sneaking up on your prey. you ares tracking down a monster."
+
     damage calculation:
     attackDamage = damage;
     if (criticalHit = true){

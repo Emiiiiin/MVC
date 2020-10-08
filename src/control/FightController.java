@@ -9,7 +9,7 @@ public class FightController {
     public FightController() {
         setEnemy();
     }
-
+// reminder: add an if-methode so that you can´t use special attacks without the needed SP
     public void attack(int warrior, int attack) {
         //Die Methode attack(int warrior, int attack) prüft in Zahlen, je nachdem welcher Warrior ausgewählt wurde, welche
         //dazugehörige Kampfmethode ausgeführt wird. Danach wird die Kampfmethode ausgeführt.
