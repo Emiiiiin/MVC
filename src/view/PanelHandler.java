@@ -18,11 +18,9 @@ public class PanelHandler {
     private JButton infoButton4;
     private JButton button1;
     private MainController mainController;
-    private MainView mainView;
 
-    public PanelHandler(MainController mainController, MainView mainView) {
+    public PanelHandler(MainController mainController) {
         this.mainController = mainController;
-        this.mainView = mainView;
         createButtons();
         setGUIData();
     }

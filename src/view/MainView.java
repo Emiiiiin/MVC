@@ -46,8 +46,8 @@ public class MainView extends JFrame {
     }
 
     public void createPanels() {
-        this.panelHandler = new PanelHandler(mainController, mainView);
-        this.startPanelHandler = new StartPanelHandler(mainController, mainView, panelHandler);
+        this.panelHandler = new PanelHandler(mainController);
+        this.startPanelHandler = new StartPanelHandler(mainController);
         this.actionPanelHandler = new ActionPanelHandler(mainController);
 
         this.switchToPanel(startPanelHandler.getPanel());

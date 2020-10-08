@@ -11,16 +11,12 @@ import java.awt.event.ComponentEvent;
 public class StartPanelHandler {
 
     private MainController mainController;
-    private MainView mainView;
-    private PanelHandler panelHandler;
     private JPanel panel;
     private JButton startButton;
     private JLabel label1;
 
-    public StartPanelHandler(MainController mainController, MainView mainView, PanelHandler panelHandler) {
+    public StartPanelHandler(MainController mainController) {
         this.mainController = mainController;
-        this.panelHandler = panelHandler;
-        this.mainView = mainView;
 
         createButtons();
         updateGUI();
@@ -38,7 +34,7 @@ public class StartPanelHandler {
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                mainView.switchToPanel(panelHandler.getPanel());
+                mainController.switchToPanel(2);
             }
         });
     }
