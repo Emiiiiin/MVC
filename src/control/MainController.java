@@ -65,4 +65,9 @@ public class MainController {
         return fightController.getAllImportantData();
     }
 
+    public void end() {
+         if (fightController.getEnd())
+        mainView.switchToPanel(5);
+    }
+
 }

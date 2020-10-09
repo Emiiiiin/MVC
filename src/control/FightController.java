@@ -174,10 +174,10 @@ public class FightController {
     public void chosenWarrior(int warrior) {
         //Mit dem übergegebenen Parameter wird je nach Zahlenwert ein Warrior-Objekt erstellt.
         if (warrior == 1) {
-            w = new Hunter("Hunter", 1000, 10, 5, false, 20, 30, 20, 30, false);
+            w = new Hunter("Hunter", 200, 10, 5, false, 20, 60, 20, 30, false);
         }
         if (warrior == 2) {
-            w = new Guard("Guard", 1500, 8, 12, false, 5, 23, 4, 14, false);
+            w = new Guard("Guard", 250, 8, 12, false, 5, 40, 4, 14, false);
         }
     }
 
@@ -190,10 +190,10 @@ public class FightController {
         //Erzeugt mithilfe der Zuffalszahl z (1 oder 2) je nach Zahlenwert ein Enemy-Objekt.
         int z = (int) (Math.random()* (2-1)+1);
         if (z == 1) {
-            e = new Mob("Mob",1000,10,5,false, 15, false);
+            e = new Mob("Mob",100,10,5,false, 15, false);
         }
         if (z == 2) {
-            e = new Mob("Wob",1800,15,5,false, 15, false);
+            e = new Mob("Wob",180,15,5,false, 15, false);
         }
     }
 
@@ -216,5 +216,9 @@ public class FightController {
         output[8] = String.valueOf(w.getFleePower());
         output[9] = String.valueOf(w.getEvasion());
         return output;
+    }
+
+    public boolean getEnd() {
+        return e.isDead();
     }
 }

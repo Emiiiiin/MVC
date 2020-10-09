@@ -103,6 +103,7 @@ public class ActionPanelHandler {
             nameLabelEnemy.setText(mainController.getAllImportantData()[4]);
             hpLabelEnemy.setText("HP: " + mainController.getAllImportantData()[3]);
             lightPanel.setBackground(Color.green);
+            mainController.end();
         }
 
         public JPanel getPanel() {
