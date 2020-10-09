@@ -1,8 +1,8 @@
 package model;
 
 public class Hunter extends Warrior{
-    public Hunter(String name, int hp, int attack, int defense, boolean isCriticalHit, int isCriticalHitChance, int SP, int fleePower, int evasion) {
-        super(name, hp, attack, defense,isCriticalHit,isCriticalHitChance,SP,fleePower,evasion);
+    public Hunter(String name, int hp, int attack, int defense, boolean isCriticalHit, int isCriticalHitChance, int SP, int fleePower, int evasion, boolean isDead) {
+        super(name, hp, attack, defense,isCriticalHit,isCriticalHitChance,SP,fleePower,evasion,isDead);
     }
     /*
     "your name is chase. you are a hunter, currently living in the davelion woods. you are a skilled archer wich comes in handy because you are horrible at sneaking up on your prey. you ares tracking down a monster."

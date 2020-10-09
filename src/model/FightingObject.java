@@ -9,14 +9,16 @@ public abstract class FightingObject {
     protected boolean isdran;
     protected boolean isCriticalHit;
     protected int isCriticalHitChance;
+    protected boolean isDead;
 
-    public FightingObject(String name, int hp, int attack, int defense, boolean isCriticalHit, int isCriticalHitChance) {
+    public FightingObject(String name, int hp, int attack, int defense, boolean isCriticalHit, int isCriticalHitChance, boolean isDead) {
         this.name = name;
         this.hp = hp;
         this.attack = attack;
         this.defense = defense;
         this.isCriticalHit = isCriticalHit;
         this.isCriticalHitChance = isCriticalHitChance;
+        this.isDead = isDead;
     }
 
     public void setName(String name) {
@@ -75,4 +77,11 @@ public abstract class FightingObject {
         this.isCriticalHitChance = isCriticalHitChance;
     }
 
+    public boolean isDead() {
+        return isDead;
+    }
+
+    public void setDead(boolean dead) {
+        isDead = dead;
+    }
 }

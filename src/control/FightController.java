@@ -13,32 +13,38 @@ public class FightController {
     public void attack(int warrior, int attack) {
         //Die Methode attack(int warrior, int attack) prüft in Zahlen, je nachdem welcher Warrior ausgewählt wurde, welche
         //dazugehörige Kampfmethode ausgeführt wird. Danach wird die Kampfmethode ausgeführt.
-        if (attack == 0) {
-            basicAttack();
+        if (e.getHp() == 0) {
+            e.setDead(true);
         }
-        if (warrior == 1) {
-            if (attack == 1) {
-                doubleShot();
+
+        if (!e.isDead()) {
+            if (attack == 0) {
+                basicAttack();
             }
-            if (attack == 2) {
-                sniperShot();
+            if (warrior == 1) {
+                if (attack == 1) {
+                    doubleShot();
+                }
+                if (attack == 2) {
+                    sniperShot();
+                }
+                if (attack == 3) {
+                    arrowStorm();
+                }
             }
-            if (attack == 3) {
-                arrowStorm();
+            if (warrior == 2) {
+                if (attack == 1) {
+                    mightySpearStab();
+                }
+                if (attack == 2) {
+                    bouquetOfSpears();
+                }
+                if (attack == 3) {
+                    shieldDash();
+                }
             }
+            enemyAttack();
         }
-        if (warrior == 2) {
-            if (attack == 1) {
-                mightySpearStab();
-            }
-            if (attack == 2) {
-                bouquetOfSpears();
-            }
-            if (attack == 3) {
-                shieldDash();
-            }
-        }
-        enemyAttack();
     }
 
     public void basicAttack() {
@@ -166,10 +172,10 @@ public class FightController {
     public void chosenWarrior(int warrior) {
         //Mit dem übergegebenen Parameter wird je nach Zahlenwert ein Warrior-Objekt erstellt.
         if (warrior == 1) {
-            w = new Hunter("Hunter", 1000, 10, 5, false, 20, 30, 20, 30);
+            w = new Hunter("Hunter", 1000, 10, 5, false, 20, 30, 20, 30, false);
         }
         if (warrior == 2) {
-            w = new Guard("Guard", 1500, 8, 12, false, 5, 23, 4, 14);
+            w = new Guard("Guard", 1500, 8, 12, false, 5, 23, 4, 14, false);
         }
     }
 
@@ -182,10 +188,10 @@ public class FightController {
         //Erzeugt mithilfe der Zuffalszahl z (1 oder 2) je nach Zahlenwert ein Enemy-Objekt.
         int z = (int) (Math.random()* (2-1)+1);
         if (z == 1) {
-            e = new Mob("Mob",1000,10,5,false, 15);
+            e = new Mob("Mob",1000,10,5,false, 15, false);
         }
         if (z == 2) {
-            e = new Mob("Wob",1800,15,5,false, 15);
+            e = new Mob("Wob",1800,15,5,false, 15, false);
         }
     }
 
