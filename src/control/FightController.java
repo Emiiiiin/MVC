@@ -21,26 +21,28 @@ public class FightController {
             if (attack == 0) {
                 basicAttack();
             }
-            if (warrior == 1) {
-                if (attack == 1) {
-                    doubleShot();
+            if (w.getSP() > 0 ) {
+                if (warrior == 1) {
+                    if (attack == 1) {
+                        doubleShot();
+                    }
+                    if (attack == 2) {
+                        sniperShot();
+                    }
+                    if (attack == 3) {
+                        arrowStorm();
+                    }
                 }
-                if (attack == 2) {
-                    sniperShot();
-                }
-                if (attack == 3) {
-                    arrowStorm();
-                }
-            }
-            if (warrior == 2) {
-                if (attack == 1) {
-                    mightySpearStab();
-                }
-                if (attack == 2) {
-                    bouquetOfSpears();
-                }
-                if (attack == 3) {
-                    shieldDash();
+                if (warrior == 2) {
+                    if (attack == 1) {
+                        mightySpearStab();
+                    }
+                    if (attack == 2) {
+                        bouquetOfSpears();
+                    }
+                    if (attack == 3) {
+                        shieldDash();
+                    }
                 }
             }
             enemyAttack();
